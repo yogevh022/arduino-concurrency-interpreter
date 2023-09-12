@@ -244,7 +244,7 @@ class Interpreter:
         reserved_starts = []
         reserved_starts_matches = re.finditer(self.regex_reserved_start, scope)
         reserved_scopes = self.match_brackets(scope, get_index=True)   # adds 1 to i.end()
-        # pretty fucking gross ngl
+        # pretty gross ngl
         for b in reserved_starts_matches:
             for a in reserved_scopes:
                 if abs(b.end() - a[0]) <= 1:        # if this is the '{' that ended the keyword
@@ -314,7 +314,7 @@ class Interpreter:
     def scope_to_micro_scopes(self, cmds: list[str]) -> list[list[lang_token]]:
         # cmds = [*txt.split(";")]
         if "" in cmds:
-            cmds.remove("")     # temp fix this shit
+            cmds.remove("")     # temp fix this
         cmds.reverse()      # iterating from end to start
 
         sleep_indexes = []
